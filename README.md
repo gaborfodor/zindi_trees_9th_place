@@ -14,10 +14,11 @@ pip install -r requirements.txt
 
 
 ### Data preparation
-Download all the images to a single directory (e.g. `./data`).
-Modify wandb user and data absolute path in `src/configs/default_config.py`.
+Download all the images to `./data`.
 
-### train models
+Modify wandb user and data path in `src/configs/default_config.py`.
+
+### Train models
 Train five `efficientnetv2_rw_s` models with 5 fold CV.
 
 `cd src`
@@ -25,3 +26,9 @@ Train five `efficientnetv2_rw_s` models with 5 fold CV.
 
 ### Create submission
 Just blend the predictions.
+
+`python submit.py`
+
+### Acknowledgements
+Thanks for Pascal Pfeiffer and Philipp Singer for sharing their solution https://github.com/pascal-pfeiffer/kaggle-rsna-2022-5th-place
+Their framework was really useful and it was easy to simplify to this image regression problem.
