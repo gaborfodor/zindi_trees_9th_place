@@ -49,8 +49,6 @@ sys.path.append("configs")
 sys.path.append("models")
 sys.path.append("datasets")
 
-WANDB_PROJECT = "WANDB_PROJECT"
-WAND_ENTITY = "WANDB_USERNAME"
 
 def run_predict(model, test_dataloader, valid_df, cfg):
 
@@ -241,8 +239,8 @@ def train(cfg, train_df, valid_df, test_df):
     val_score = 0
     if cfg.local_rank == 0:
         wandb.init(
-            project=WANDB_PROJECT,
-            entity=WAND_ENTITY,
+            project=cfg.wandb_project,
+            entity=cfg.wandb_user,
             config = vars(cfg)
         )
 

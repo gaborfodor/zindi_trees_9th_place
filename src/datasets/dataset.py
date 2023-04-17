@@ -45,7 +45,7 @@ class CustomDataset(Dataset):
         return feature_dict
 
     def _read_image(self, idx):
-        path = self.images[idx]
+        path = self.cfg.data_dir + self.images[idx]
         img = cv2.imread(path, cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         return  img

@@ -27,7 +27,7 @@ cfg.do_test = True
 cfg.eval_ddp = True
 cfg.save_val_data = True
 
-# ressources
+# resources
 cfg.mixed_precision = True
 cfg.grad_accumulation = 1
 cfg.gpu = 0
@@ -38,9 +38,13 @@ cfg.save_only_last_ckpt = False
 cfg.save_weights_only = True
 cfg.pin_memory = False
 
-# logging,
+
 cfg.tags = None
 cfg.loss = "mse"
-cfg.data_dir = "/home/gabor/kaggle/palm-tree-counter/"
+
+# You need to change
+cfg.data_dir = "/home/gabor/kaggle/zindi_trees_9th_place/"
+cfg.wandb_project = "palm"
+cfg.wandb_user = "WANDB_USER"
 
 basic_cfg = cfg
